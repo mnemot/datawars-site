@@ -1,0 +1,33 @@
+html, body {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: x-large;
+}
+div {
+	flex: 1;
+	padding: 2%;
+}
+img { flex: 0; }
+.kindCmd {
+	font-weight: bold;
+	font-size: x-large;
+}
+.kindReq {
+	font-style: italic;
+}
+.kindScript:before {
+	content: '\25c9';
+}
+.kindConf::before {
+	content: '\25e8';
+}
+.kindPRG::before {
+	content: '\25bc';
+}
+.kindDaemon::before {
+	content: '\25c7';
+}
