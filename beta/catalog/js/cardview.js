@@ -5,9 +5,9 @@ elemMenuContainer = document.getElementById('menucontainer');
 
 valSeries = getQueryVariable("s")
 valCard = getQueryVariable("i");
+valAction = getQueryVariable("t");
 
-function getQueryVariable(variable)
-{
+function getQueryVariable(variable) {
        var query = window.location.search.substring(1);
        var vars = query.split("&");
        for (var i=0;i<vars.length;i++) {
@@ -17,24 +17,11 @@ function getQueryVariable(variable)
        return(false);
 }
 
-function updateDimensions() {
-	elemMenuContainer.addEventListener('scroll', function(e) { setCookie("sidebar-yscroll", e.target.scrollTop); });
-	elemMenuFrame.style.height = elemMenuFrame.contentWindow.document.body.scrollHeight + 'px';
-	/*elemCardFrame.style.width = elemCardContainer.innerWidth + 'px';
-	elemCardFrame.style.height = elemCardFrame.contentWindow.document.body.scrollHeight + 'px';*/
-	var scroll;
-	if (getCookie("sidebar-yscroll") != "") {
-		scroll = getCookie("sidebar-yscroll");
-	}
-	else if (valSeries && valCard) { scroll = Math.max(0, 5 + ((parseInt(valCard) * 25.5) - elemMenuContainer.offsetHeight)); }
-	elemMenuContainer.scrollTo(0, scroll);
-}
+function updateDimensions() { elemMenuFrame.style.height = elemMenuFrame.contentWindow.document.body.scrollHeight + 'px'; }
 
 function showCard(e) {
 	document.getElementById("disp").src = "s" + e.target.id + ".html";
 }
-
-function cookieSave(name, val) { document.cookie = name.toString() + "=" + val.toString(); }
 
 function setCookie(cname, cvalue) {
     document.cookie = cname.toString() + "=" + cvalue.toString();
@@ -58,13 +45,27 @@ function getCookie(cname) {
 
 function update() {
 	updateDimensions();
-	window.requestAnimationFrame(function(){setTimeout(update, 1000);});
+	setTimeout(update, 100);
 }
 
 (function() {
 	update();
+	var to = Array(document.getElementById('toPrev'), document.getElementById('toNext'), document.getElementById('toSrch'));
+	setCookie("currentAction", valAction);
 	if (valSeries && valCard) {
+		setCookie("currentCard", valCard);
+		setCookie("currentSeries", valSeries);
 		elemCardFrame.src = "s" + valSeries + valCard + ".html";
+		var i = Array(valSeries, (parseInt(valCard) - 1).toString().padStart(3, '0'), (parseInt(valCard) + 1).toString().padStart(3, '0'));
+		to[0].setAttribute('href', 'index.html?s=' + i[0] + "&i=" + i[1] + "&t=prev");
+		to[1].setAttribute('href', 'index.html?s=' + i[0] + "&i=" + i[2] + "&t=next");
+		if (valCard == "001") { to[0].style.display = "none"; }
+		else if (valCard == "060") { to[1].style.display = "none"; }
 	}
-	else { elemCardFrame.src = "search.html"; }
+	else {
+		elemCardFrame.src = "search.html";
+		to[0].style.display = "none";
+		to[1].style.display = "none";
+		to[2].style.display = "none"; 
+	}
 })();
