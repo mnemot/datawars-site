@@ -6,88 +6,12 @@
 		<meta name="author" content="Gato D, Mesmerize Games">
 		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" href="css/base.css">
-		<script language="JavaScript"> <!--
-		function checkRefresh()
-		{
-			// Get the time now and convert to UTC seconds
-			var today = new Date();
-			var now = today.getUTCSeconds();
-
-			// Get the cookie
-			var cookie = document.cookie;
-			var cookieArray = cookie.split('; ');
-
-			// Parse the cookies: get the stored time
-			for(var loop=0; loop < cookieArray.length; loop++)
-			{
-				var nameValue = cookieArray[loop].split('=');
-				// Get the cookie time stamp
-				if( nameValue[0].toString() == 'SHTS' )
-				{
-					var cookieTime = parseInt( nameValue[1] );
-				}
-				// Get the cookie page
-				else if( nameValue[0].toString() == 'SHTSP' )
-				{
-					var cookieName = nameValue[1];
-				}
-			}
-
-			if( cookieName &&
-				cookieTime &&
-				cookieName == escape(location.href) &&
-				Math.abs(now - cookieTime) < 5 )
-			{
-				// Refresh detected
-
-				document.cookie = "";
-			}	
-
-			// You may want to add code in an else here special 
-			// for fresh page loads
-		}
-
-		function prepareForRefresh()
-		{
-			if( refresh_prepare > 0 )
-			{
-				// Turn refresh detection on so that if this
-				// page gets quickly loaded, we know it's a refresh
-				var today = new Date();
-				var now = today.getUTCSeconds();
-				document.cookie = 'SHTS=' + now + ';';
-				document.cookie = 'SHTSP=' + escape(location.href) + ';';
-			}
-			else
-			{
-				// Refresh detection has been disabled
-				document.cookie = 'SHTS=;';
-				document.cookie = 'SHTSP=;';
-			}
-		}
-
-		function disableRefreshDetection()
-		{
-			// The next page will look like a refresh but it actually
-			// won't be, so turn refresh detection off.
-			refresh_prepare = 0;
-
-			// Also return true so this can be placed in onSubmits
-			// without fear of any problems.
-			return true;
-		} 
-
-		// By default, turn refresh detection on
-		var refresh_prepare = 1;
-
-		-->
-		</script>
 	</head>
-	<body onLoad="JavaScript:checkRefresh();" onUnload="JavaScript:prepareForRefresh();">
+	<body class="hero">
 	<video loop muted autoplay poster="img/black.png" class="fullscreen">
-		<source src="files/WeeExaltedGrouper.webm" type="video/webm">
+		<source src="files/BlushingDeterminedAustraliansilkyterrier.webm" type="video/webm">
 	</video>
-	<a href="home.html" class="logo-big"><img src="img/logo-big-blk.png" alt="Binary Realms Data.Warriors"></a>
-	<p id="splashtext">2018 - <a href="https://mmzgames.itch.io/">Mesmerize Games</a>, <a href="https://gatod.xyz/">Gato D</a><br>Distributed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareALike 4.0 International</a> license.<br>Hosted on <a href="https://github.com/mnemot/datawars-site">GitHub</a>.</p>
+	<a href="http://eepurl.com/dGp8Ij" class="logo-big"><img src="img/logo-big-blk.png" alt="Binary Realms Data.Warriors"></a>
+	<p id="splashtext">2018 - <a href="https://mmzgames.itch.io/">Mesmerize Games</a>, <a href="https://gatod.xyz/">Gato D</a><br>Distributed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareALike 4.0 International</a> license.<br><a href="https://github.com/mnemot/binaryrealms">Binary Realms Ruleset</a> distributed under a <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v3</a> license.<br>Hosted on <a href="https://github.com/mnemot/datawars-site">GitHub</a>.</p>
 	</body>
 </html>

@@ -1,3 +1,11 @@
+elemCardFrame = document.getElementById('cardframe');
+elemCardContainer = document.getElementById('cardcontainer');
+elemMenuFrame = document.getElementById('menuframe');
+elemMenuContainer = document.getElementById('menucontainer');
+
+valSeries = getQueryVariable("s")
+valCard = getQueryVariable("i");
+
 function getQueryVariable(variable)
 {
        var query = window.location.search.substring(1);
@@ -7,6 +15,19 @@ function getQueryVariable(variable)
                if(pair[0] == variable){return pair[1];}
        }
        return(false);
+}
+
+function updateDimensions() {
+	elemMenuContainer.addEventListener('scroll', function(e) { setCookie("sidebar-yscroll", e.target.scrollTop); });
+	elemMenuFrame.style.height = elemMenuFrame.contentWindow.document.body.scrollHeight + 'px';
+	/*elemCardFrame.style.width = elemCardContainer.innerWidth + 'px';
+	elemCardFrame.style.height = elemCardFrame.contentWindow.document.body.scrollHeight + 'px';*/
+	var scroll;
+	if (getCookie("sidebar-yscroll") != "") {
+		scroll = getCookie("sidebar-yscroll");
+	}
+	else if (valSeries && valCard) { scroll = Math.max(0, 5 + ((parseInt(valCard) * 25.5) - elemMenuContainer.offsetHeight)); }
+	elemMenuContainer.scrollTo(0, scroll);
 }
 
 function showCard(e) {
@@ -35,23 +56,15 @@ function getCookie(cname) {
     return "";
 }
 
+function update() {
+	updateDimensions();
+	window.requestAnimationFrame(function(){setTimeout(update, 1000);});
+}
+
 (function() {
-	var display = document.getElementById('disp')
-	var menu = document.getElementById('menu');
-	var container = document.getElementById('menucontainer');
-	container.style.height = 464;
-	container.addEventListener('scroll', function(e) { setCookie("sidebar-yscroll", e.target.scrollTop); console.log(e.target.scrollTop); });
-	menu.style.height = 1536;
-	var series = getQueryVariable("s"), card = getQueryVariable("i");
-	if (series && card) {
-		var scroll;
-		if (getCookie("sidebar-yscroll") != "") {
-			scroll = getCookie("sidebar-yscroll");
-		}
-		else { scroll = Math.max(0, 5 + ((parseInt(card) * 25.5) - container.offsetHeight)); }
-		display.src = "s" + series + card + ".html";
-		container.scrollTo(0, scroll);
-		console.log(scroll);
+	update();
+	if (valSeries && valCard) {
+		elemCardFrame.src = "s" + valSeries + valCard + ".html";
 	}
-	else { document.getElementById('disp').src = "search.html"; }
+	else { elemCardFrame.src = "search.html"; }
 })();

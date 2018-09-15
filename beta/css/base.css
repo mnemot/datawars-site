@@ -1,3 +1,31 @@
+@keyframes bg-fade {
+    from {
+		opacity: 0;
+		transform: scale(2);
+	}
+    to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes logo-fade {
+    from {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+    to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes fade {
+    from {
+		opacity: 0;
+	}
+    to {
+		opacity: 1;
+	}
+}
 @keyframes link-hover {
     from {
 		background-color: #fff;
@@ -119,22 +147,41 @@ body {
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
-	background-color: transparent;
+	background-color: #000;
 }
 .hero > p {
 	display: block;
 	width: 100%;
 	position: absolute;
 	left: 0px;
-	bottom: 0px;
+	bottom: 2em;
 	font-size: 8pt;
 	text-align: center;
 	font-weight: bold;
 	color: #fff;
 	filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
+	animation-name: fade;
+	animation-duration: 5s;
+	animation-delay: 5s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	z-index: 1;
 }
 .hero > p > a {
 	color: #fff;
+}
+.hero > video {
+	animation-name: bg-fade;
+	animation-duration: 25s;
+	transform: scale(1);
+	filter: grayscale(1) blur(8px);
+}
+.hero > .logo-big {
+	animation-name: logo-fade;
+	animation-duration: 8s;
+	transform: scale(1);
+	z-index: 1;
+	animation-timing-function: ease;
 }
 .fullscreen {
 	position: fixed;
@@ -142,9 +189,6 @@ body {
 	top: 0;
 	min-width: 100vw;
 	min-height: 100vh;
-	z-index: -10;
-	filter: grayscale(1);
-	opacity: 0.5;
 }
 .flexbody {
   display: flex;
@@ -286,27 +330,29 @@ footer > p > a:visited {
 	background-position: bottom center;
 	background-repeat: repeat-x;
 }
-.iframecontainer {
+.framecontainer { display: flex; }
+#cardcontainer {
+	flex: 1;
+	margin: 2em;
+	border: 2px solid #888;
+	padding: 0.25em;
+	border-radius: 8px;
+}
+#menucontainer {
 	margin-top: 1em;
 	width: 248px;
 	height: 100%;
 	border: 0;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	flex-basis: inherit;
 }
-#disp {
+#cardframe, #menuframe {
 	width: 100%;
-	margin: 2em;
-	border: 2px solid #888;
-	padding: 0.25em;
-	border-radius: 8px;
-}
-#menu {
+	border: 0;
 	border: 0;
 	margin: 0;
 	padding: 0;
-	width: 100%;
-	overflow: hidden;
 }
 @media only screen 
 and (max-device-width: 1280px)
