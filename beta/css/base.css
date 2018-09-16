@@ -191,7 +191,6 @@ body {
 	min-height: 100vh;
 }
 .flexbody {
-  display: flex;
   min-height: 100vh;
   flex-direction: column;
   width: 85vw;
@@ -321,6 +320,7 @@ footer > p > a:visited {
 }
 .clear {
 	visibility: hidden !important;
+	display: none !important;
 	border: 0;
 	margin: 0;
 	padding: 0;
