@@ -1,0 +1,9 @@
+html, body {
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+}
+a, a:visited { padding: 0.2em; color: #000; background-color: #fff; display: inline-block; text-decoration: none; }
+a:hover, a.selectedCard { color: #fff; background-color: #000; }
+h3 { text-align: center; }

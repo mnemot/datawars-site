@@ -1,0 +1,141 @@
+.PRG CARDS
+.DAEMON CARDS
+.CONF CARDS
+.SCRIPT CARDS
+EFFECTS
+COMMANDS
+MEMORY POINTS
+DESKTOP
+DRIVE
+USER
+BASE MEMORY COST
+FINAL MEMORY COST
+STACK-LIKE
+RESOLVE
+HALT
+REQUIREMENT
+THE CONVENIENCE RULE
+OWNER
+CONTROL
+TRASH BIN
+CARD TYPES
+CARD STATES
+TURN STEPS
+LOADING STATE
+IDLE STATE
+RUNNING STATE
+INIT STEP
+MEMORY CLEANUP STEP
+SETUP STEP
+RUN STEP
+EXIT STEP
+COMMAND ISSUING
+COMMAND EXECUTION
+
+DESKTOP
+The playing field where you put your cards you own in play. If other user manages to put cards into your desktop, you don't gain control over that card, and they can still control them!
+
+COMMAND
+Every card has certain text associated to it. In this text, certain parts are marked with bold text, --a-formatted-name and {curly braces}. These are commands, and can be issued by users controlling these cards on the Run step of the turn.
+
+MEMORY POINT
+Basic virtual resouce unit, used to play cards and commands by allocating them. Each player starts with 8, and deallocates them at the Init step of their turn. The Memory Monitor included within the Starter Kit is meant to be a visual representation of allocated/free Memory Points each player has.
+
+CARD EFFECT
+Every card has certain text associated to it. In this text, certain rules and special considerations are depicted to be enforced by the game for the card to be considered in play. These effects are specified before the card commands within the text, and their consequences are to be considered on every resolve when a situation applies.
+
+STATE
+Every .PRG, .CONF and .DAEMON card is in a certain state while in play. This affects whether they can be be targeted, when you cna issue commands via these cards, among other things.
+* Loading
+* Idle
+* Running
+
+LOADING STATE
+The state of a .PRG card that enters in play. In this state, the card can’t execute commands, but their effects are in place.
+
+IDLE STATE
+When a .PRG card is in play but hasn't issued any command nor allocated any memory, it’s considered in an idle state. Only cards in Idle state can issue commands.
+
+RUNNING STATE
+If a .PRG card issues any command it’s considered to be running. These cards go back to their idle state during their next Memory Cleanup step.
+
+TURN STEPS
+Fantasy name for a phase within a turn. Each turn is composed of five steps that happen one after another.
+* Init
+* Memory Cleanup
+* Setup
+* Run
+* Exit
+
+INIT STEP
+The Init step if the first phase within a turn.
+In this step, the current user drawns as many cards as they want from their drive until they have 5 in their hand. At least one card must be drawn from the drive.
+
+MEMORY CLEANUP STEP
+The Memory Cleanup step is the second phase within a turn. It is preceded by the Init step.
+In this step, the current user deallocates the Memory Points used by their cards, and set all their .PRG cards in play to Idle state. From this point on, any .DAEMON, .CONF and .PRG cards in play on the current user’s desktop are considered to be active.
+
+SETUP STEP
+The Setup step is the third phase within a turn. It is preceded by the Memory Cleanup step.
+During this step, the current user can play any kind of card on their desktop, allocating Memory Points as needed. If the current user runs out of Memory Points during this step, their turn goes straight into the EXIT step.
+
+RUN STEP
+The Run step is the fourth phase within a turn. It is preceded by the Setup step.
+At this point, the current user can issue commands from idle .PRG and .DAEMON cards in play, as long as have either control or ownership of the card, alongside .SCRIPT cards from their hand. During this step, other users can also execute commands, always starting from current user in a stack-like fashion (last commands to be executed are the first to be resolved).
+
+EXIT STEP
+The Exit step is the last phase within a turn.
+At this point, the turn is over. If the current user has more than 5 cards in their hand, they must discard cards from their hand until they have just 5. If any user has no cards left in their drive, they are considered out of the game. The last user standing in game wins.
+
+DRIVE
+Fantasy name for each player’s deck, supposed to represent an storage device full of information the players fetches from.
+
+USER
+Fantasy name for the players participating in a match.
+
+BASE MEMORY COST
+The amount of Memory Points the card needs to allocate in order to be put in play, without considering any extra Memory Points needed to allocate for the card to be successfully played.
+
+FINAL MEMORY COST
+The amount of Memory Points the card needs to allocate in order to be put in play, considering all extra Memory Points needed to allocate for the card to be successfully played.
+
+STACK-LIKE
+Commands “pile up” in a stack-like fashion and resolve from the last issued command to the first one. So, for example, if you issue a command and an opponents issues another command in return, their command must be resolved before your command is able to resolve.
+
+RESOLVE
+Commands “pile up” in a stack-like fashion and resolve from the last issued command to the first one. So, for example, if you issue a command and an opponents issues another command in return, their command must be resolved before your command is able to resolve.
+
+COMMAND ISSUING
+Commands can only be executed during the Run step of each turn, and the first command to be issued is always the one issued by whoever is playing their turn, at the start of their Run step. All users can issue commands during this step in a "stack-like" fashion starting by the current user.
+
+COMMAND EXECUTION
+Cards have their effects printed on them, but certain effects must be manually triggered to execute. These are called commands, and are shown as specific entries within the card’s body of text in between {curly braces} indicating the Base Memory Cost of the command with symbols. The ■ symbol indicates a Memory Point to allocate, while a □ symbol is meant to indicate a variable amount of Memory Points to allocate, as indicated by the command’s effects and/or requirements.
+You can only issue commands via cards in an Idle state, and only once any prerequisites have been fulfilled and Memory Points have been allocated the command is considered to be executed. 
+
+REQUIREMENT
+Sometimes, card commands and effects require you to fulfill certain conditions in order to be issued. This text is specified in cursive text, and unless the conditiones laid out in this text aren't fulfilled, commands and effects that concern these requirements are specified on the text itself, otherwise the commands and effects pertinent to the conditions either aren't issued or resolve on immediate halt.
+
+THE CONVENIENCE RULE
+If for any reason some card is not clear (i.e. "half" an amount results in a non-exact number, a card that halts on non-specified requirements, the rule specifies "either" two things without a specific way of clearly choosing, etc.) the game is "designed" around a convenience rule that specifies that these would resolve always in favor of whoever is issuing the command. So, numbers always round up, unless it's negative, in which case they round down, etc.
+
+OWNER
+Whoever owns the card, as in, the user playing with the deck the card came from.
+
+CONTROL
+The ability of using the commands the controlled card is able to execute. Every card enters in play under your control, and you 
+
+TRASH BIN
+Fantasy name for the discard pile. Cards that end up here are considered out of play. Only cards you own can go to your trash bin.
+
+.PRG:
+Program cards. These cards enter in game directly on your Desktop and take a turn to load up, and can execute commands. These cards enter in Loading state, and return to Idle state on their Memory Cleanup step. The .PRG cards that execute commands enter into Running state, and can't execute more commands until they return back to Idle state.
+
+.DAEMON:
+Daemon cards. Similar to .PRG cards, these cards stay in game, but unlike .PRG cards, only one can be in play on each user’s desktop, and they enter and stay in Idle state, even after executing commands. You can discard these cards from your desktop during your Setup phase.
+
+.CONF:
+Configuration cards. These cards attach to .PRG cards and alter the way they work. You can only attach them to .PRG cards on your desktop! Just like .PRG cards, .CONF cards go into Running state when executing commands, but unlike them, these cards enter in play in Idle state.
+
+.SCRIPT:
+You can play these cards pretty much at any moment, as long as it’s your turn or you already can issue commands. These cards execute immediately, and are not considered to be in play, but their effects apply on resolve as long as they aren't halted on execution.
+

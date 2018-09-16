@@ -1,0 +1,53 @@
+html, body {
+	display: flex;
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: x-large;
+	overflow-x: hidden;
+}
+div {
+	flex: 1;
+	padding: 1em;
+	margin-right: 1.5em;
+	white-space: normal;
+	position: absolute;
+	top: 0;
+	left: calc(100vh * (523 / 828));
+	width: calc(100vw - (100vh * (523 / 828)) - 3em);
+	overflow-x: hidden;
+}
+img {
+	display: block;
+	flex: 0;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.kindCmd {
+	font-weight: bold;
+	font-size: x-large;
+	white-space: nowrap;
+}
+.kindReq {
+	font-style: italic;
+}
+h2 { font-size: large; }
+h2, .kindScript, .kindConf, .kindConf, .kindPRG, .kindDaemon {
+	white-space: nowrap;
+}
+.kindScript:before {
+	content: '\25c9';
+}
+.kindConf::before {
+	content: '\25e8';
+}
+.kindPRG::before {
+	content: '\25bc';
+}
+.kindDaemon::before {
+	content: '\25c7';
+}

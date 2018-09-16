@@ -10,19 +10,72 @@
 	<body class="flexbody">
 		<div class="flexcontainer">
 			<main>
-				<h1 class="text-center padding-1em brackets">Data.Warriors Dictionary</h1>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros.</p>
-				<hr>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros.</p>
+				<iframe id="dictionaryTerm" src="welcome.html"></iframe>
 			</main>
 			<nav>
 				<a class="logo-small" href="../home.html"><img src="../img/logo-small-blk.png" alt="Binary Realms Data.Warriors"></a>
+				<div id="dictionaryList">
+					<h3>Rules</h3>
+					<ul>
+						<li><a id="effects" href="index.html?term=effects">Effects</a></li>
+						<li><a id="commands" href="index.html?term=commands">Commands</a></li>
+						<li><a id="memorypoints" href="index.html?term=memorypoints">Memory Points</a></li>
+					</ul>
+					<h3>Terms</h3>
+					<ul>
+						<li><a id="desktop" href="index.html?term=desktop">Desktop</a></li>
+						<li><a id="drive" href="index.html?term=drive">Drive</a></li>
+						<li><a id="user" href="index.html?term=user">User</a></li>
+						<li><a id="basememory" href="index.html?term=basememory">Base Memory Cost</a></li>
+						<li><a id="finalmemory" href="index.html?term=finalmemory">Final Memory Cost</a></li>
+						<li><a id="stacklike" href="index.html?term=stacklike">Stack-like</a></li>
+						<li><a id="resolve" href="index.html?term=resolve">Resolve</a></li>
+						<li><a id="halt" href="index.html?term=halt">Halt</a></li>
+						<li><a id="reqs" href="index.html?term=reqs">Requirement</a></li>
+						<li><a id="convenience" href="index.html?term=convenience">"The Convenience Rule"</a></li>
+						<li><a id="owner" href="index.html?term=owner">Card Owner</a></li>
+						<li><a id="control" href="index.html?term=control">Card Controller(s)</a></li>
+						<li><a id="trashbin" href="index.html?term=trashbin">Trash Bin</a></li>
+					</ul>
+					<h3>Topics</h3>
+					<ul>
+						<li><a id="cardtype" href="index.html?term=cardtype">Card Types</a></li>
+						<li><a id="cardstate" href="index.html?term=cardstate">Card States</a></li>
+						<li><a id="turnstep" href="index.html?term=turnstep">Turn Steps</a></li>
+					</ul>
+					<h3>Card Types</h3>
+					<ul>
+						<li><a id="prg" href="index.html?term=prg">.PRG cards</a></li>
+						<li><a id="daemon" href="index.html?term=daemon">.DAEMON cards</a></li>
+						<li><a id="conf" href="index.html?term=conf">.CONF cards</a></li>
+						<li><a id="script" href="index.html?term=script">.SCRIPT cards</a></li>
+					</ul>
+					<h3>Card States</h3>
+					<ul>
+						<li><a id="loading" href="index.html?term=loading">Loading State</a></li>
+						<li><a id="idle" href="index.html?term=idle">Idle State</a></li>
+						<li><a id="running" href="index.html?term=running">Running State</a></li>
+					</ul>
+					<h3>Turn Steps</h3>
+					<ul>
+						<li><a id="init" href="index.html?term=init">Init Step</a></li>
+						<li><a id="cleanup" href="index.html?term=cleanup">Memory Cleanup Step</a></li>
+						<li><a id="setup" href="index.html?term=setup">Setup Step</a></li>
+						<li><a id="run" href="index.html?term=run">Run Step</a></li>
+						<li><a id="exit" href="index.html?term=exit">Exit Step</a></li>
+					</ul>
+					<h3>Commands</h3>
+					<ul>
+						<li><a id="issuing" href="index.html?term=issuing">Command issuing</a></li>
+						<li><a id="execution" href="index.html?term=execution">Command execution</a></li>
+					</ul>
+				</div>
 				<ul>
 					<li><a href="../home.html">Back</a></li>
 				</ul>
 				<hr>
 				<ul>
-					<li><a href="../store.html">Store</a></li>
+					<li><a class="unavailable" href="#">Store</a></li>
 					<li><a href="https://twitter.com/Binary_Realms">Twitter</a></li>
 					<li><a href="http://eepurl.com/dGp8Ij">Newsletter</a></li>
 				</ul>
@@ -31,5 +84,18 @@
 		<footer>
 			<p>2018 - <a href="https://mmzgames.itch.io/">Mesmerize Games</a>, <a href="https://gatod.xyz/">Gato D</a><br>Distributed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareALike 4.0 International</a> license.<br><a href="https://github.com/mnemot/binaryrealms">Binary Realms Ruleset</a> distributed under a <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v3</a> license.<br>Hosted on <a href="https://github.com/mnemot/datawars-site">GitHub</a>.</p>
 		</footer>
+		<script src="../js/urlquery.js"></script>
+		<script>
+		valTerm = getQueryVariable("term");
+		elemDictionaryFrame = document.getElementById('dictionaryTerm');
+		(function() {
+			if (valTerm) {
+				elemDictionaryFrame.src = valTerm + ".html"; 
+				var elem = document.getElementById(valTerm);
+				elem.classList.add("selectedTerm");
+				elem.scrollIntoView();
+			}	
+		})();
+		</script>
 	</body>
 </html>
