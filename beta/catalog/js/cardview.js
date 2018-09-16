@@ -92,7 +92,7 @@ https://github.com/jfriend00/docReady
 // and object for the method to be attached to
 
 
-elemCardFrame.contentDocument.addEventListener("load", function(e) {
+elemCardFrame.onload = function(e) {
 	elemMenuFrame.style.height = elemMenuFrame.contentDocument.body.scrollHeight + 'px';
 	var to = Array(document.getElementById('toPrev'), document.getElementById('toNext'), document.getElementById('toSrch'));
 	if (valSeries && valCard) {
@@ -124,5 +124,5 @@ elemCardFrame.contentDocument.addEventListener("load", function(e) {
 		setCookie("sorting", valSorting);
 		elemMenuFrame.src = "by" + valSorting + ".html";
 	}
-});
+};
 
