@@ -19,7 +19,7 @@
 		</div>
 		<script src="js/cookiemon.js"></script>
 		<script>
-			document.addEventListener("load", function() {
+			document.addEventListener("ready", function() {
 				var anchors = document.getElementsByTagName("a");
 				for (var n = 0; n < anchors.length; ++n) { anchors[n].addEventListener("click", function(e){ setCookie("sorting", e.target.id); }); }
 				console.log("done");

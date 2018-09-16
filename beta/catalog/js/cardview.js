@@ -1,3 +1,5 @@
+loaded = false;
+
 elemCardFrame = document.getElementById('cardframe');
 elemCardContainer = document.getElementById('cardcontainer');
 elemMenuFrame = document.getElementById('menuframe');
@@ -10,9 +12,11 @@ valSorting = getQueryVariable("o");
 
 elemCardFrame.addEventListener("load", function() {
 	elemMenuFrame.style.height = elemMenuFrame.contentDocument.body.scrollHeight + 'px';
+	if (loaded) { return; }
+	loaded = true;
 	var to = Array(document.getElementById('toPrev'), document.getElementById('toNext'), document.getElementById('toSrch'));
 	if (valSeries && valCard) {
-		elemCardFrame.src = "s" + valSeries + valCard + ".html";
+		if (elemCardFrame.src != "s" + valSeries + valCard + ".html") { elemCardFrame.src = "s" + valSeries + valCard + ".html"; }
 		setCookie("card", valCard);
 		setCookie("series", valSeries);
 		var i = Array(valSeries, (parseInt(valCard) - 1).toString().padStart(3, '0'), (parseInt(valCard) + 1).toString().padStart(3, '0')), u;
@@ -37,7 +41,9 @@ elemCardFrame.addEventListener("load", function() {
 	}
 	if (valSorting) {
 		setCookie("sorting", valSorting);
-		elemMenuFrame.src = "by" + valSorting + ".html";
+		console.log("starting");
+		if (elemMenuFrame.src != "by" + valSorting + ".html") { elemMenuFrame.src = "by" + valSorting + ".html"; }
+		console.log("done");
 	}
 }, false);
 
