@@ -347,13 +347,11 @@ footer > p > a:visited {
 	width: 248px;
 	height: 100%;
 	border: 0;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	overflow: hidden;
 	flex-basis: inherit;
 }
 #cardframe, #menuframe {
 	width: 100%;
-	border: 0;
 	border: 0;
 	margin: 0;
 	padding: 0;
