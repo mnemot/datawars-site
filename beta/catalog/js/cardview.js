@@ -92,7 +92,8 @@ https://github.com/jfriend00/docReady
 // and object for the method to be attached to
 
 
-docReady(function() {
+elemCardFrame.contentWindow.addEventListener("load", function(e) {
+	elemMenuFrame.style.height = elemMenuFrame.contentWindow.document.body.scrollHeight + 'px';
 	var to = Array(document.getElementById('toPrev'), document.getElementById('toNext'), document.getElementById('toSrch'));
 	if (valSeries && valCard) {
 		elemCardFrame.src = "s" + valSeries + valCard + ".html";
@@ -103,6 +104,10 @@ docReady(function() {
 		if (valSorting) {
 			u[0] += "&o=" + valSorting;
 			u[1] += "&o=" + valSorting;
+			if (valSorting != "number") {
+				to[0].style.display = "none";
+				to[1].style.display = "none";
+			}
 		}
 		to[0].setAttribute('href', u[0]);
 		to[1].setAttribute('href', u[1]);
@@ -120,3 +125,4 @@ docReady(function() {
 		elemMenuFrame.src = "by" + valSorting + ".html";
 	}
 });
+
