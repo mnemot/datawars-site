@@ -19,9 +19,10 @@
 		</div>
 		<script src="js/cookiemon.js"></script>
 		<script>
-			document.addEventListener("load", function(e) {
+			document.addEventListener("load", function() {
 				var anchors = document.getElementsByTagName("a");
-				for (var n = 0; n < anchors.length; ++n) { anchors.addEventListener("click", function(e){ setCookie("sorting", e.target.id); }); }
+				for (var n = 0; n < anchors.length; ++n) { anchors[n].addEventListener("click", function(e){ setCookie("sorting", e.target.id); }); }
+				console.log("done");
 			});
 		</script>
 	</body>
