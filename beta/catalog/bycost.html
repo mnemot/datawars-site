@@ -71,22 +71,8 @@
 			<li><a id="s1059" href="index.html?s=1&i=059">#059 - RootAccess.CONF</a></li>
 			<li><a id="s1060" href="index.html?s=1&i=060">#060 - Defrag.SCRIPT</a></li>
 		</ul>
+		<script src="../js/cookiemon.js"></script>
 		<script>
-			function getCookie(cname) {
-				var name = cname + "=";
-				var decodedCookie = decodeURIComponent(document.cookie);
-				var ca = decodedCookie.split(';');
-				for(var i = 0; i <ca.length; i++) {
-					var c = ca[i];
-					while (c.charAt(0) == ' ') {
-						c = c.substring(1);
-					}
-					if (c.indexOf(name) == 0) {
-						return c.substring(name.length, c.length);
-					}
-				}
-				return "";
-			}
 			(function() {
 				if (getCookie("card") && getCookie("series")) {
 					var elem = document.getElementById("s" + getCookie("series") + getCookie("card"));

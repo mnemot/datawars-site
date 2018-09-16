@@ -15,15 +15,13 @@
 			<a id="number" href="index.html?o=number">List by Card Number</a>
 			<a id="name" href="index.html?o=name">List by Card Name</a>
 			<a id="kind" href="index.html?o=kind">List by Card Type</a>
-			<a id="cost" href="index.html?o=cost">List by Base Memory Cost</a>
 		</div>
-		<script src="js/cookiemon.js"></script>
+		<script src="../js/cookiemon.js"></script>
 		<script>
-			document.addEventListener("ready", function() {
+			(function() {
 				var anchors = document.getElementsByTagName("a");
 				for (var n = 0; n < anchors.length; ++n) { anchors[n].addEventListener("click", function(e){ setCookie("sorting", e.target.id); }); }
-				console.log("done");
-			});
+			})();
 		</script>
 	</body>
 </html>

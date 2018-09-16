@@ -37,7 +37,7 @@
 			<p>2018 - <a href="https://mmzgames.itch.io/">Mesmerize Games</a>, <a href="https://gatod.xyz/">Gato D</a><br>Distributed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareALike 4.0 International</a> license.<br><a href="https://github.com/mnemot/binaryrealms">Binary Realms Ruleset</a> distributed under a <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v3</a> license.<br>Hosted on <a href="https://github.com/mnemot/datawars-site">GitHub</a>.</p>
 		</footer>
 		<script src="../js/urlquery.js"></script>
-		<script src="js/cookiemon.js"></script>
+		<script src="../js/cookiemon.js"></script>
 		<script>
 			elemCardFrame = document.getElementById('cardframe');
 			elemCardContainer = document.getElementById('cardcontainer');
@@ -53,7 +53,7 @@
 				elemMenuFrame.addEventListener("load", function(e) {
 					if (window.menuLoaded) { return; }
 					window.menuLoaded = true;
-					if (valSorting) {
+					if (valSorting && (valAction != "srch")) {
 						setCookie("sorting", valSorting);
 						console.log("starting");
 						if (e.target.src != "by" + valSorting + ".html") { e.target.src = "by" + valSorting + ".html"; }
@@ -81,6 +81,7 @@
 					else if (valCard == "060") { to[1].style.display = "none"; }
 				}
 				else {
+					document.cookie = "";
 					to[0].style.display = "none";
 					to[1].style.display = "none";
 					to[2].style.display = "none"; 
