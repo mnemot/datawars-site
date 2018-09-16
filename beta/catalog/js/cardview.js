@@ -8,16 +8,7 @@ valCard = getQueryVariable("i");
 valAction = getQueryVariable("t");
 valSorting = getQueryVariable("o");
 
-function updateDimensions() { elemMenuFrame.style.height = elemMenuFrame.contentWindow.document.body.scrollHeight + 'px'; }
-
-function showCard(e) {
-	document.getElementById("disp").src = "s" + e.target.id + ".html";
-}
-
-function update() {
-	updateDimensions();
-	setTimeout(update, 100);
-}
+function showCard(e) { document.getElementById("disp").src = "s" + e.target.id + ".html"; }
 
 /*
 https://github.com/jfriend00/docReady
@@ -101,8 +92,7 @@ https://github.com/jfriend00/docReady
 // and object for the method to be attached to
 
 
-function init() {
-	update();
+docReady(function() {
 	var to = Array(document.getElementById('toPrev'), document.getElementById('toNext'), document.getElementById('toSrch'));
 	if (valSeries && valCard) {
 		elemCardFrame.src = "s" + valSeries + valCard + ".html";
@@ -129,6 +119,4 @@ function init() {
 		setCookie("sorting", valSorting);
 		elemMenuFrame.src = "by" + valSorting + ".html";
 	}
-}
-
-docReady(init)
+});
