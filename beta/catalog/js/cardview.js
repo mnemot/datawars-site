@@ -92,8 +92,8 @@ https://github.com/jfriend00/docReady
 // and object for the method to be attached to
 
 
-elemCardFrame.contentWindow.addEventListener("load", function(e) {
-	elemMenuFrame.style.height = elemMenuFrame.contentWindow.document.body.scrollHeight + 'px';
+elemCardFrame.contentDocument.addEventListener("load", function(e) {
+	elemMenuFrame.style.height = elemMenuFrame.contentDocument.body.scrollHeight + 'px';
 	var to = Array(document.getElementById('toPrev'), document.getElementById('toNext'), document.getElementById('toSrch'));
 	if (valSeries && valCard) {
 		elemCardFrame.src = "s" + valSeries + valCard + ".html";
