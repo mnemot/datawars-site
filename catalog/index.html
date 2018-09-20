@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="../css/base.css">
 	</head>
 	<body class="flexbody">
-		<div class="flexcontainer">
+		<div class="flexcontainer" id="catalogbody">
 			<div id="cardcontainer" class="framecontainer">
 			<iframe id="cardframe" src="search.html">
 			</iframe>
@@ -37,8 +37,9 @@
 			<p>2018 - <a href="https://mmzgames.itch.io/">Mesmerize Games</a>, <a href="https://gatod.xyz/">Gato D</a><br>Distributed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareALike 4.0 International</a> license.<br><a href="https://github.com/mnemot/binaryrealms">Binary Realms Ruleset</a> distributed under a <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v3</a> license.<br>Hosted on <a href="https://github.com/mnemot/datawars-site">GitHub</a>.</p>
 		</footer>
 		<script src="../js/urlquery.js"></script>
-		<script src="../js/cookiemon.js"></script>
 		<script>
+			window.menuLoaded = false;
+			
 			elemCardFrame = document.getElementById('cardframe');
 			elemCardContainer = document.getElementById('cardcontainer');
 			elemMenuFrame = document.getElementById('menuframe');
@@ -53,18 +54,16 @@
 				elemMenuFrame.addEventListener("load", function(e) {
 					if (window.menuLoaded) { return; }
 					window.menuLoaded = true;
-					if (valSorting && (valAction != "srch")) {
-						setCookie("sorting", valSorting);
-						console.log("starting");
-						if (e.target.src != "by" + valSorting + ".html") { e.target.src = "by" + valSorting + ".html"; }
-						console.log("done");
-					}
+					valSeries = getQueryVariable("s");
+					valCard = getQueryVariable("i");
+					valAction = getQueryVariable("t");
+					valSorting = getQueryVariable("o");
+					if (valSorting && (valAction != "srch")) { e.target.src = "by" + valSorting + ".html"; }
+					if (valSeries && valCard) { e.target.src += "?s=" + valSeries + "&i=" + valCard; }
 				}, false);
 				var to = Array(document.getElementById('toPrev'), document.getElementById('toNext'), document.getElementById('toSrch'));
 				if (valSeries && valCard) {
 					elemCardFrame.src = "s" + valSeries + valCard + ".html";
-					setCookie("card", valCard);
-					setCookie("series", valSeries);
 					var i = Array(valSeries, (parseInt(valCard) - 1).toString().padStart(3, '0'), (parseInt(valCard) + 1).toString().padStart(3, '0')), u;
 					u = Array("index.html?s=" + i[0] + "&i=" + i[1] + "&t=prev", "index.html?s=" + i[0] + "&i=" + i[2] + "&t=prev");
 					if (valSorting) {
@@ -81,7 +80,6 @@
 					else if (valCard == "060") { to[1].style.display = "none"; }
 				}
 				else {
-					document.cookie = "";
 					to[0].style.display = "none";
 					to[1].style.display = "none";
 					to[2].style.display = "none"; 

@@ -349,7 +349,9 @@ footer > p > a:visited {
 	border: 0;
 	overflow: hidden;
 	flex-basis: inherit;
+	flex-grow: 1;
 }
+#catalogbody { height: calc(100vh - 96px); }
 iframe {
 	width: 100%;
 	border: 0;

@@ -104,17 +104,17 @@
 			<li><a id="s1054" href="index.html?s=1&i=054">#054 - zerofill.SCRIPT</a></li>
 			<li><a id="s1013" href="index.html?s=1&i=013">#013 - zombify.CONF</a></li>
 		</ul>
-		<script src="../js/cookiemon.js"></script>
+		<script src="../js/urlquery.js"></script>
 		<script>
 			(function() {
-				if (getCookie("sorting")) {
+				if (getQueryVariable("o")) {
 					var anchors = document.getElementsByTagName("a");
 					for (var n = 0; n < anchors.length; ++n) {
-						anchors[n].href += "&o=" + getCookie("sorting");
+						anchors[n].href += "&o=" + getQueryVariable("o");
 					}
 				}
-				if (getCookie("card") && getCookie("series")) {
-					var elem = document.getElementById("s" + getCookie("series") + getCookie("card"));
+				if (getQueryVariable("s") && getQueryVariable("i")) {
+					var elem = document.getElementById("s" + getQueryVariable("s") + getQueryVariable("i"));
 					elem.classList.add("selectedCard");
 					elem.scrollIntoView();
 				}
