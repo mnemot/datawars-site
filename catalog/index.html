@@ -58,8 +58,8 @@
 					valCard = getQueryVariable("i");
 					valAction = getQueryVariable("t");
 					valSorting = getQueryVariable("o");
-					if (valSorting && (valAction != "srch")) { e.target.src = "by" + valSorting + ".html"; }
-					if (valSeries && valCard) { e.target.src += "?s=" + valSeries + "&i=" + valCard; }
+					if (valSorting && (valAction != "srch")) { e.target.src = "by" + valSorting + ".html?o=" + valSorting; }
+					if (valSeries && valCard) { e.target.src += "&s=" + valSeries + "&i=" + valCard; }
 				}, false);
 				var to = Array(document.getElementById('toPrev'), document.getElementById('toNext'), document.getElementById('toSrch'));
 				if (valSeries && valCard) {
