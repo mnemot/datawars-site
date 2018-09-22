@@ -1,0 +1,12 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+@media print
+{    
+    nav, nav *
+    {
+        display: none !important;
+    }
+}

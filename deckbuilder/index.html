@@ -1,0 +1,293 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Binary Realms Data.Warriors</title>
+		<meta name="description" content="Binary Realms Data.Warriors is a free and open-source strategy card game ready to print and assemble.">
+		<meta name="author" content="Gato D, Mesmerize Games">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+		<link rel="stylesheet" href="../css/base.css">
+	</head>
+	<body class="flexbody">
+		<div class="flexcontainer">
+			<main>
+				<h1 class="text-center padding-1em brackets">Data.Warriors Deck Builder</h1>
+				<p>With this tool, you can build your own decks, ready to print! Just choose 30 cards and the Deck Builder will take care of the rest. After you click the "Generate" button, this tool will walk you through the generated card sheets for you to print using a printer directly from the browser.</p>
+				<p>You can also choose one of the prebuilt decks available through the dropdown menu. These decks have specific strategies that must be understood before using them in matches.</p>
+				<hr>
+				<form id="formBuilder" method="GET" action="layout.html">
+					<input type="text" value="" name="data" id="data" style="display:none;">
+					<div>
+					Card Series
+					<select id="series" disabled>
+						<option value="1">Series 1 - Data.Wars</option>
+					</select>
+					</div>
+					<div>
+					Prebuilt Decks
+					<select id="pbdecks">
+					</select>
+					<input type="button" id="btnLoad" value="Load">
+					</div>
+					<hr>
+					<div>Deck Name: <input type="text" id="name"></div>
+					<div>Deck Author: <input type="text" id="author"></div>
+					<hr>
+					<div><input type="button" id="btnReset" name="add" value="Reset"> <input type="button" id="btnAdd" name="add" value="Add"> <input type="submit" id="btnSubmit" value="Generate..."></div>
+					<hr>
+					<p>Total Amount of Cards: <span id="total">1</span></p>
+					<div id="cards">
+						<div class="card" id="card">
+							<select class="kind">
+								<option value="001">#001 - Recycle.SCRIPT</option>
+								<option value="002">#002 - DDiver.DAEMON</option>
+								<option value="003">#003 - ArcMan.PRG</option>
+								<option value="004">#004 - fsFreeze.SCRIPT</option>
+								<option value="005">#005 - SysRec.SCRIPT</option>
+								<option value="006">#006 - drWatson.PRG</option>
+								<option value="007">#007 - TidyUp.SCRIPT</option>
+								<option value="008">#008 - cpKiller.CONF</option>
+								<option value="009">#009 - fbomb.CONF</option>
+								<option value="010">#010 - CRCorrupt.SCRIPT</option>
+								<option value="011">#011 - ledbomber.PRG</option>
+								<option value="012">#012 - dLiz.PRG</option>
+								<option value="013">#013 - zombify.CONF</option>
+								<option value="014">#014 - lilProxy.CONF</option>
+								<option value="015">#015 - dproxy.DAEMON</option>
+								<option value="016">#016 - THORSE.PRG</option>
+								<option value="017">#017 - Snitchy.PRG</option>
+								<option value="018">#018 - SoulSeeker.PRG</option>
+								<option value="019">#019 - GCMon.PRG</option>
+								<option value="020">#020 - rootkat.PRG</option>
+								<option value="021">#021 - VDoctor.DAEMON</option>
+								<option value="022">#022 - Scramblr.PRG</option>
+								<option value="023">#023 - DrillBitt.PRG</option>
+								<option value="024">#024 - KMauler.PRG</option>
+								<option value="025">#025 - MSHAp.PRG</option>
+								<option value="026">#026 - pgKit.DAEMON</option>
+								<option value="027">#027 - Lockdown.SCRIPT</option>
+								<option value="028">#028 - HVEye.PRG</option>
+								<option value="029">#029 - PolyAgent.PRG</option>
+								<option value="030">#030 - RemoteSync.SCRIPT</option>
+								<option value="031">#031 - MrDLMan.DAEMON</option>
+								<option value="032">#032 - ReSH.DAEMON</option>
+								<option value="033">#033 - vultor.PRG</option>
+								<option value="034">#034 - data-dl.CONF</option>
+								<option value="035">#035 - WipeOut.SCRIPT</option>
+								<option value="036">#036 - pgCOLI.DAEMON</option>
+								<option value="037">#037 - bruteforce.SCRIPT</option>
+								<option value="038">#038 - rktSaver.CONF</option>
+								<option value="039">#039 - FileFlare.SCRIPT</option>
+								<option value="040">#040 - binSummon.SCRIPT</option>
+								<option value="041">#041 - Sweeper.SCRIPT</option>
+								<option value="042">#042 - reconf.SCRIPT</option>
+								<option value="043">#043 - rDaemon.SCRIPT</option>
+								<option value="044">#044 - overbloat.CONF</option>
+								<option value="045">#045 - memSkip.SCRIPT</option>
+								<option value="046">#046 - ClipUp.SCRIPT</option>
+								<option value="047">#047 - brokerman.PRG</option>
+								<option value="048">#048 - huVolt.PRG</option>
+								<option value="049">#049 - MonkeyBuddy.PRG</option>
+								<option value="050">#050 - SgtWally.CONF</option>
+								<option value="051">#051 - fork.SCRIPT</option>
+								<option value="052">#052 - DragNDrop.CONF</option>
+								<option value="053">#053 - fileloss.SCRIPT</option>
+								<option value="054">#054 - zerofill.SCRIPT</option>
+								<option value="055">#055 - DataScrubber.CONF</option>
+								<option value="056">#056 - dummyboy.PRG</option>
+								<option value="057">#057 - heatup.SCRIPT</option>
+								<option value="058">#058 - Eppy.DAEMON</option>
+								<option value="059">#059 - RootAccess.CONF</option>
+								<option value="060">#060 - Defrag.SCRIPT</option>
+							</select>
+							x<input class="amount" type="number" min="1" max="4" value="1"> - <input type="button" value="-" disabled> <input type="button" value="?">
+						</div>
+					</div>
+				</form>
+			</main>
+			<nav>
+				<a class="logo-small" href="../home.html"><img src="../img/logo-small-blk.png" alt="Binary Realms Data.Warriors"></a>
+				<ul>
+					<li><a href="../home.html">Home</a></li>
+					<li><a href="../news.html">News</a></li>
+					<li><a href="../print.html">Print</a></li>
+					<li><a href="../learn.html">Learn</a></li>
+					<li><a href="../make.html">Make</a></li>
+					<li><a href="../catalog/index.html">Card Catalog</a></li>
+					<li><a class="navlink-active" href="index.html">Deck Builder</a></li>
+					<li><a href="../dictionary/index.html">Dictionary</a></li>
+					<li><a href="../about.html">About</a></li>
+					<li><a href="../more.html">More...</a></li>
+				</ul>
+				<hr>
+				<ul>
+					<li><a href="store.html">Store</a></li>
+					<li><a href="https://twitter.com/Binary_Realms">Twitter</a></li>
+					<li><a href="http://eepurl.com/dGp8Ij">Newsletter</a></li>
+					<li><a href="../compete.html">Events</a></li>
+					<li><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwaQeXh4A_BgX3VNiHorh_tmUv0I-_zWp2Y-6vSVJ_chIzA/viewform">Feedback</a></li>
+				</ul>
+			</nav>
+		</div>
+		<footer>
+			<p>2018 - <a href="https://mmzgames.itch.io/">Mesmerize Games</a>, <a href="https://gatod.xyz/">Gato D</a><br>Distributed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareALike 4.0 International</a> license.<br><a href="https://github.com/mnemot/binaryrealms">Binary Realms Ruleset</a> distributed under a <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v3</a> license.<br>Hosted on <a href="https://github.com/mnemot/datawars-site">GitHub</a>.</p>
+		</footer>
+		<script src="../js/urlquery.js"></script>
+		<script>
+			elemFormBtnAdd = document.getElementById("btnAdd");
+			elemFormBtnReset = document.getElementById("btnReset");
+			elemFormBtnSubmit = document.getElementById("btnSubmit");
+			elemFormBtnLoad = document.getElementById("btnLoad");
+			window.elemNewCard = document.getElementById("card").outerHTML;
+			window.data = {
+				cards: ['001'],
+				amounts: [1],
+				series: 1,
+				name: 'Untitled',
+				author: '%USER_NAME%',
+				page: 1
+			};
+			window.data_defaults = Array(["---", JSON.stringify(window.data)], ["Power Drive", JSON.stringify({"cards": ["047","024","033","003","019","021","036","002","027","037","041","001","053","030","004","054","005","050","034","055","008","038"],"amounts": [2,2,2,1,1,1,1,1,1,1,2,2,2,2,1,1,1,2,1,1,1,1],"series": 1,"name": "Power Drive","author": "fl0ppydr1ver","page": 1})], ["Total Control", JSON.stringify({"cards": ["048", "011", "016", "029", "020", "018", "028", "012", "032", "058", "051", "040", "039", "043", "042", "045", "009", "052", "013", "059", "014"], "amounts": [2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1], "series": 1, "name": "Total Control", "author": "0xd0c702", "page": 1 })]);
+			window.data_default = window.data_defaults[0];
+			function popitup(url,windowName) {
+				newwindow=window.open(url,windowName,'height=480,width=800');
+				if (window.focus) {newwindow.focus()}
+				return false;
+			}
+			var contains = function(needle) {
+				// Per spec, the way to identify NaN is that it is not equal to itself
+				var findNaN = needle !== needle;
+				var indexOf;
+
+				if(!findNaN && typeof Array.prototype.indexOf === 'function') {
+					indexOf = Array.prototype.indexOf;
+				} else {
+					indexOf = function(needle) {
+						var i = -1, index = -1;
+
+						for(i = 0; i < this.length; i++) {
+							var item = this[i];
+
+							if((findNaN && item !== item) || item === needle) {
+								index = i;
+								break;
+							}
+						}
+
+						return index;
+					};
+				}
+
+				return indexOf.call(this, needle) > -1;
+			};
+			function htmlToElement(html) {
+				var template = document.createElement('template');
+				html = html.trim(); // Never return a text node of whitespace as the result
+				template.innerHTML = html;
+				return template.content.firstChild;
+			}
+			function sanitizeString(str){
+				str = str.replace(/[^a-z0-9áéíóúñü\.,_-]/gim,"");
+				return str.trim();
+			}
+			function updateDOMElements() {
+				updateDataField();
+				document.getElementById("author").setAttribute('value', window.data.author);
+				document.getElementById("name").setAttribute('value', window.data.name);
+				var newFormDivCards = document.createElement("div");
+				document.getElementById("formBuilder").replaceChild(newFormDivCards, document.getElementById("cards"));
+				newFormDivCards.setAttribute('id', 'cards');
+				console.log(window.data);
+				var total = 0;
+				for (var n = 0; n < window.data.cards.length; n++) {
+					var newElem = htmlToElement(window.elemNewCard);
+					newElem.setAttribute('id', 'card' + (n + 1).toString());
+					newElem.children[0].setAttribute('id', 'selcard' + (n + 1).toString());
+					newElem.children[0].getElementsByTagName('option')[(parseInt(window.data.cards[n]) - 1)].selected = 'selected';
+					newElem.children[0].addEventListener('change', function(e){
+						var thisId = e.target.parentElement.getAttribute('id').substr(4);
+						var thisIndex = (parseInt(thisId) - 1);
+						var oldCard = window.data.cards[thisIndex];
+						var newCard = e.target.options[e.target.selectedIndex].value;
+						if (!contains.call(window.data.cards, newCard)) {
+							window.data.cards[thisIndex] = newCard;
+							console.log(window.data.cards);
+							requestAnimationFrame(updateDOMElements);
+						}
+						else { e.target.selectedIndex = (parseInt(oldCard) - 1); }
+					});
+					newElem.children[1].setAttribute('value', window.data.amounts[n]);
+					newElem.children[1].addEventListener('change', function(e){
+						var thisId = e.target.parentElement.getAttribute('id').substr(4);
+						var thisIndex = (parseInt(thisId) - 1);
+						window.data.amounts[thisIndex] = parseInt(e.target.value);
+						console.log(window.data.amounts);
+						requestAnimationFrame(updateDOMElements);
+					});
+					if (n > 0) {
+						newElem.children[2].disabled = false;
+						newElem.children[2].addEventListener('click', function(e){
+							var thisId = e.target.parentElement.getAttribute('id').substr(4);
+							var thisIndex = (parseInt(thisId) - 1);
+							window.data.cards.splice(thisIndex, 1);
+							window.data.amounts.splice(thisIndex,  1);
+							requestAnimationFrame(updateDOMElements);
+						});
+					}
+					newElem.children[3].addEventListener('click', function(e) {
+						var thisId = e.target.parentElement.getAttribute('id').substr(4);
+						var thisIndex = (parseInt(thisId) - 1);
+						var cardURL = "../catalog/s" + window.data.series.toString() + window.data.cards[thisIndex] + ".html";
+						popitup(cardURL, "Card Details");
+					});
+					newFormDivCards.insertBefore(newElem, newFormDivCards.firstChild);
+					total += window.data.amounts[n];
+					console.log(newElem);
+				}
+				document.getElementById("total").innerHTML = total.toString();
+			}
+			function updateDataField() { document.getElementById("data").setAttribute('value', JSON.stringify(window.data)); }
+			(function(){
+				for (var n = 0; n < window.data_defaults.length; n++) {
+					document.getElementById("pbdecks").innerHTML += "<option value='" + n.toString() + "'>" + window.data_defaults[n][0] + "</option>";
+				}
+				document.getElementById("name").addEventListener("input", function(e){ window.data.name = sanitizeString(e.target.value); updateDataField(); });
+				document.getElementById("author").addEventListener("input", function(e){ window.data.author = sanitizeString(e.target.value); updateDataField(); });
+				elemFormBtnLoad.addEventListener("click", function(e){
+					window.data = JSON.parse(window.data_defaults[document.getElementById("pbdecks").selectedIndex][1]);
+					updateDOMElements();
+				});
+				elemFormBtnLoad.addEventListener("click", function(e){
+					window.data = JSON.parse(window.data_defaults[document.getElementById("pbdecks").selectedIndex][1]);
+					updateDOMElements();
+				});
+				elemFormBtnReset.addEventListener("click", function(e){
+					window.data = JSON.parse(window.data_defaults[0][1]);
+					updateDOMElements();
+				});
+				elemFormBtnAdd.addEventListener("click", function(e){
+					var nextcard = 1;
+					var nextstr = nextcard.toString();
+					while (((nextcard <= 60) && (contains.call(window.data.cards, nextcard.toString().padStart(3, "0"))))) { nextcard++; }
+					window.data.cards.push(nextcard.toString().padStart(3, '0'));
+					window.data.amounts.push(1);
+					window.data.name = document.getElementById("name").getAttribute('value');
+					window.data.author = document.getElementById("author").getAttribute('value');
+					updateDOMElements();
+				});
+				elemFormBtnSubmit.addEventListener('click', function(e){
+					var total = parseInt(document.getElementById("total").innerHTML);
+					if (total % 30 != 0) {
+						e.preventDefault();
+						e.stopPropagation();
+						if (total < 30) { alert("Decks must contain at least 30 cards"); }
+						else { alert("Decks must be multiples of 30"); }
+					}
+				});
+				if (getQueryVariable("data")) {
+					window.data = JSON.parse(decodeURIComponent(getQueryVariable("data")));
+				}
+				updateDOMElements();
+			})();
+		</script>
+	</body>
+</html>

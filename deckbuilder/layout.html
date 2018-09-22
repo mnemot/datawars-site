@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Binary Realms Data.Warriors</title>
+		<meta name="description" content="Binary Realms Data.Warriors is a free and open-source strategy card game ready to print and assemble.">
+		<meta name="author" content="Gato D, Mesmerize Games">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+		<link rel="stylesheet" href="css/layout.css">
+	</head>
+	<body>
+		<svg id="cardsheet" width="196mm" height="248mm" viewBox="0 0 196 248">
+			<g id="layer1">
+				<rect style="fill:transparent;stroke:#000000;stroke-width:0.24999999;stroke-miterlimit:4;stroke-dasharray:1.00000001, 0.50000001;stroke-dashoffset:0" id="rect4708" width="190" height="220" x="3" y="27" />
+				<image x="8" y="8" id="image3878" xlink:href="img/header.png" preserveAspectRatio="none" height="13" width="90" />
+				<rect id="rect3881" width="48" height="13" x="140" y="8" style="fill:#ffffff;stroke:#000000;stroke-width:0.25;stroke-miterlimit:4;stroke-dasharray:1.00000003, 0.50000001;stroke-dashoffset:0" />
+				<text style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332" x="185" y="12" id="header-name">Deck Name</text>
+				<text style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332" x="185" y="15.5" id="header-author">Deck Author</text>
+				<text style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332" x="185" y="19" id="header-pagecount">Page X of 3</text>
+				<g id="g3868" transform="translate(8,32)">
+					<path style="fill:#000000;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.16862746;stroke-miterlimit:4;stroke-dasharray:0.4,0.4;stroke-dashoffset:0" d="M 45,-5 V 215" id="path4710"/>
+					<path style="fill:#000000;fill-opacity:0.16862745;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.4, 0.4;stroke-dashoffset:0;stroke-opacity:1" d="M 90,-5 V 215" id="path4710-1"/>
+					<path style="fill:#000000;fill-opacity:0.16862745;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.4, 0.4;stroke-dashoffset:0;stroke-opacity:1" d="M 135,-5 V 215" id="path4710-1-0"/>
+					<path style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:0.4,0.4;stroke-dashoffset:0" d="M -5,70 H 185" id="path4727"/>
+					<path style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.4, 0.4;stroke-dashoffset:0;stroke-opacity:1" d="M -5,140 H 185" id="path4727-5"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card1" x="0" y="0"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card2" x="45" y="0"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card3" x="90" y="0"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card4" x="135" y="0"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card5" x="0" y="70"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card6" x="45" y="70"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card7" x="90" y="70"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card8" x="135" y="70"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card9" x="0" y="140"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card10" x="45" y="140"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card11" x="90" y="140"/>
+					<image width="45" height="70" preserveAspectRatio="none" xlink:href="img/back.png" id="card12" x="135" y="140"/>
+				</g>
+			</g>
+		</svg>
+		<nav><a href="#" id="nav-prev">&#10094;</a> <span id="nav-pagecount"></span> <a id="nav-back" href="index.html">Back</a> <a href="#" id="nav-next">&#10095;</a></nav>
+		<script src="../js/urlquery.js"></script>
+		<script>
+		function sanitizeString(str){
+			str = str.replace(/[^a-z0-9áéíóúñü\.,_-]/gim,"");
+			return str.trim();
+		}
+		(function(){
+			var data, data_temp, offset, pointer, card, cardid, cardleft, total;
+			console.log(JSON.parse(decodeURIComponent(getQueryVariable("data"))));
+			if (getQueryVariable("data")) {
+				data = JSON.parse(decodeURIComponent(getQueryVariable("data")));
+				data_temp = JSON.parse(decodeURIComponent(getQueryVariable("data")));
+			}
+			else { return; }
+			total = 0;
+			pointer = 0;
+			card = 0;
+			cardid = "";
+			cardleft = 0;
+			for (var n = 0; n < data.amounts.length; ++n) { total += data.amounts[n]; }
+			console.log(total);
+			offset = ((data.page - 1) * 12);
+			pointer -= offset;
+			for (var n = 0; n < 30; n++) {
+				if (pointer >= 12) { break; }
+				if (cardleft > 0) { cardleft--; }
+				else {
+					cardid = data.cards[card];
+					cardleft = (data.amounts[card] - 1); 
+					card++;
+				}
+				if (pointer >= 0) {
+					console.log(pointer);
+					document.getElementById('card' + (pointer + 1).toString()).setAttribute('href', 'img/s' + data.series.toString() + '_' + cardid + '.png');
+				}
+				pointer++;
+			}
+			if (data.page > 1) {
+				data_temp.page = data.page - 1;
+				document.getElementById("nav-prev").setAttribute('href', "layout.html?data=" + encodeURIComponent(JSON.stringify(data_temp)));
+			}
+			if (data.page < (Math.ceil(total / 12) + 1)) {
+				data_temp.page = data.page + 1;
+				document.getElementById("nav-next").setAttribute('href', "layout.html?data=" + encodeURIComponent(JSON.stringify(data_temp)));
+			}
+			data_temp.page = 1;
+			document.getElementById("nav-back").setAttribute('href', "index.html?data=" + encodeURIComponent(JSON.stringify(data_temp)));
+			document.getElementById("header-name").innerHTML = sanitizeString(data.name);
+			document.getElementById("header-author").innerHTML = sanitizeString(data.author);
+			document.getElementById("header-pagecount").innerHTML = "Page " + data.page.toString() + " of " + (Math.ceil(total / 12) + 1).toString();
+			document.getElementById("nav-pagecount").innerHTML = "Page " + data.page.toString() + " of " + (Math.ceil(total / 12) + 1).toString();
+		})();
+		</script>
+	</body>
+</html>

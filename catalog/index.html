@@ -30,6 +30,7 @@
 					<li><a href="#" class="unavailable">Store</a></li>
 					<li><a href="https://twitter.com/Binary_Realms">Twitter</a></li>
 					<li><a href="http://eepurl.com/dGp8Ij">Newsletter</a></li>
+					<li><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwaQeXh4A_BgX3VNiHorh_tmUv0I-_zWp2Y-6vSVJ_chIzA/viewform">Feedback</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -59,8 +60,8 @@
 					valAction = getQueryVariable("t");
 					valSorting = getQueryVariable("o");
 					if (valSorting && (valAction != "srch")) { 
-					e.target.src = "by" + valSorting + ".html?o=" + valSorting;
-					if (valSeries && valCard) { e.target.src += "&s=" + valSeries + "&i=" + valCard; }
+						e.target.src = "by" + valSorting + ".html?o=" + valSorting;
+						if (valSeries && valCard) { e.target.src += "&s=" + valSeries + "&i=" + valCard; }
 					}
 					else if (valSorting && valSeries && valCard) { e.target.src += "by" + valSorting + ".html?s=" + valSeries + "&i=" + valCard; }
 				}, false);
