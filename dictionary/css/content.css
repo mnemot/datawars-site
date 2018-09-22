@@ -7,14 +7,6 @@ html, body {
 	font-family: 'Roboto Condensed', 'Roboto', sans-serif;	
 }
 a {
-	text-transform: uppercase;
-	display: block;
-	width: 75%;
-	text-align: center;
-	padding: 1em;
-	margin: 0.5em auto;
-	border: 2px dashed #000;
-	font-size: x-large;
 	color: #000;
 	text-decoration: none;
 	font-weight: bold;
@@ -22,7 +14,6 @@ a {
 a:hover {
 	color: #fff;
 	background-color: #000;
-	border: 2px dashed #fff;
 }
 h3, h5 { text-align: center; }
 .brackets::before { content: " {"; }

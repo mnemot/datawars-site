@@ -370,6 +370,8 @@ iframe {
 }
 #dictionaryList a, #dictionaryList a:visited { padding: 0.2em; color: #000; background-color: #fff; display: inline-block; text-decoration: none; }
 #dictionaryList a:hover, #dictionaryList a.selectedTerm { color: #fff; background-color: #000; }
+#formBuilder { text-align: center; }
+#formBuilder > * { display: block; }
 @media only screen 
 and (max-device-width: 1280px)
  {
